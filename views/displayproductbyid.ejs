@@ -1,0 +1,166 @@
+<html>
+    <head>
+        <link href="/stylesheets/style.css" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Oswald:wght@200&display=swap" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script src="/javascripts/project.js"></script>
+    </head>
+     
+    <body>
+        <form action="/products/edit_delete_product" method="post" >
+            <input type="hidden" value="<%=data.productid%>" name="productid">
+        <div class="maincontainer">
+            <div class="box">
+                <div class="container">
+                    <div class="row">
+                       <div class="col-12 headstyle centerstyle">
+                        <img src="/images/logo.png" width="35"/>
+                         <span>Product Register</span>
+                         <a href="/products/displayallproducts" style="margin-left: auto; cursor: pointer;"><img src="/images/list.jpeg" width="50"/></a>
+                       </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <hr>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-4">
+                            <select class="form-select" id="categoryid"   name="categoryid">
+                                <option value="<%=data.categoryid%>"><%=data.categoryname%></option>
+                                
+                              </select>
+                        </div>
+
+                        <div class="col-4">
+                            <select class="form-select" id="typeid" name="typeid" >
+                                <option value="<%=data.typeid%>"><%=data.typename%></option>
+                                
+                              </select>
+                        </div>
+
+                        <div class="col-4">
+                            <select class="form-select" id="brandid" name="brandid" >
+                                <option value="<%=data.brandid%>"><%=data.brandname%></option>
+                               
+                              </select>
+                        </div>
+                    </div>
+
+                    <div class="row" style="margin-top: 8px;">
+                        <div class="col-12">
+                            <input type="text" value="<%=data.productname%>" placeholder="Product Name" class="form-control" id="inputPassword" name="productname">
+                        </div>
+                    </div>
+
+                    <div class="row" style="margin-top: 8px;">
+                        <div class="col-12">
+                            <textarea class="form-control"  name="description" placeholder="Input Product Description here...." ><%=data.description%></textarea>
+                        </div>
+                    </div>
+
+                    <div class="row" style="margin-top: 8px;">
+                        <div class="col-6">
+                            <input type="text" value="<%=data.price%>" placeholder="Product price" name="price" class="form-control" id="inputPassword" >
+                        </div>
+
+                        <div class="col-6">
+                            <input type="text" value="<%=data.offerprice%>" placeholder=" Product Offer Price" name="offerprice" class="form-control" id="inputPassword" >
+                        </div>
+                    </div>
+
+                    <div class="row" style="margin-top: 8px;">
+                        <div class="col-6">
+                            <input type="text" value="<%=data.stock%>" placeholder="Product Stock" name="stock" class="form-control" id="inputPassword" >
+                        </div>
+
+                        <div class="col-6">
+                            <input type="text" value="<%=data.gst%>" placeholder=" GST" name="gst" class="form-control" id="inputPassword" >
+                        </div>
+                    </div>
+
+                   <%
+                     var st=data.gift.split(',')
+                     var gift={'Gift':false,'Warranty':false}
+                     if(st.length>1)
+                     {
+                        st.map((item)=>{
+                            gift[item]=true
+                        })
+                     } 
+                     else
+                     {
+                        gift[data.gift]=true
+                     }
+                     var avl={'Continue':false,'Discontinue':false}
+                     avl[data.status]=true
+                   
+                   
+                   %>
+
+                      
+                    <div class="row" style="margin-top: 8px;">
+                        <div class="col-6">
+                            <div class="form-check form-check-inline">
+                                <input <%=gift['Gift']?'checked':''%> class="form-check-input" type="checkbox" name="gift" id="gift"  value="Gift">
+                                <label class="form-check-label" for="gift">Gift</label>
+                              </div>
+                              <div class="form-check form-check-inline">
+                                <input <%=gift['Warranty']?'checked':''%> class="form-check-input" type="checkbox" id="warranty" name="gift" value="Warranty">
+                                <label class="form-check-label" for="warranty">Warranty</label>
+                              </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="form-check form-check-inline">
+                                <input <%=avl['Continue']?'checked':''%> class="form-check-input" type="radio" name="status" id="cont" value="Continue">
+                                <label class="form-check-label" for="cont">Continue</label>
+                              </div>
+                              <div class="form-check form-check-inline">
+                                <input <%=avl['Discontinue']?'checked':''%> class="form-check-input" type="radio" name="status" id="dcont" value="Discontinue">
+                                <label class="form-check-label" for="dcont">Discontinue</label>
+                              </div>
+                        </div>
+                    </div>
+
+                  
+
+                    <div class="row" style="margin-top: 10px;">
+                        <div class="col-6" style="display:flex; align-items: center; justify-content: center;">
+                            <button type="submit" name="btn" value="Edit" class="btn btn-primary" style="width: 200px;">Edit</button>                          
+                        </div>
+
+                        <div class="col-6" style="display:flex; align-items: center; justify-content: center;">
+                            <button type="submit" name="btn" value="Delete" class="btn btn-primary" style="width: 200px;">Delete</button>
+                        </div>
+                    </div>
+
+                    <div class="row" style="margin-top: 10px;">
+                        <div class="col-12" style="display:flex; align-items: center; justify-content: center;">
+
+                            <%=message %>
+                        
+                        </div>
+                    
+                    </div>
+
+                    
+                    
+                    
+
+
+                </div>
+
+            </div>
+
+        </div>
+        </form>
+    </body>
+
+
+</html>

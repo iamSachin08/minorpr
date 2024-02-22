@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <link href="/stylesheets/style.css" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/99fc0d74eb.js" crossorigin="anonymous"></script>
+        
+
+    </head>
+    <body>
+        <div class="dmaincontainer">
+            <div class="dbox">
+                <div class="appbarstyle">
+                    <span class="logostyle">Digital World</span>
+                    <span class="logoutstyle">Log Out</span>
+                </div>
+            </div>
+            <div style="display: flex; flex-direction: row; height:90%; ">
+                <div class="sidebarleft">
+                    <div style="display: flex; align-items: center; justify-content: center;margin: 6px;">
+                       <img src="/images/<%=data.picture%>" style="width: 70px; height: 70px; border-radius: 95px;"/>                      
+                    </div>
+                    <div class="admintextstyle">
+                        <%=data.adminname %>
+                    </div>
+                    <div class="contacttextstyle">
+                        <div><%=data.emailid%></div>
+                        <div>+91<%=data.mobileno%></div>
+                    </div>
+                    <div class="menustyle">
+                        <div class="itemstyle"><i class="fa-solid fa-cart-plus"></i><a style="text-decoration: none; color: #000;" href="/products/productsinterface" target="mw">New Product</a> </div>
+                        <div class="itemstyle"><i class="fa-solid fa-rectangle-list"></i><a style="text-decoration: none; color: #000;" href="/products/displayallproducts" target="mw">Product List</a> </div>
+                        <div class="itemstyle"><i class="fa-solid fa-rectangle-list"></i><a style="text-decoration: none; color: #000;" href="/admin/adminlogout" >Log Out</a> </div>
+                    </div>
+                    
+
+                </div>
+                <div class="contentstyle">
+                    <iframe name="mw" frameborder="0" width="100%" height="100%" scrolling="no"></iframe>
+                </div>
+            
+            </div>
+
+        </div>
+    </body>      
+
+
+</html>

@@ -1,0 +1,118 @@
+.maincontainer
+ {
+  width: 100%;
+  height: 100%;
+  background: #95a5a6;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+
+ }
+.box{
+  width: 70%;
+  height:auto;
+  background: #fff;
+  border-radius: 10px;
+  padding: 5px;
+}   
+.headstyle{
+  color:#303952; 
+  font-family: Oswald;
+  font-size: 25px; 
+  font-weight: bolder;
+  }
+ 
+  .centerstyle{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+  .boxtable{
+    width: 80%;
+    height:auto;
+    background: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    color:#303952; 
+  font-family: Oswald;
+  font-size: 16px; 
+  font-weight: bolder;
+  }
+  .loginmaincontainer
+  {
+   width: 100%;
+   height: 100%;
+   background: #fff;
+   justify-content: center;
+   display: flex;
+   align-items: center;
+   flex-direction: row;
+ 
+  }
+ .loginbox{
+   width: 90%;
+   height:auto;
+   background: #fff;
+ } 
+ /* now  style od dashboard */
+ .dmaincontainer{
+  width: 100Vw;
+  height: 100vh;
+  background: #bdc3c7;
+  display: flex;
+  flex-direction: column;
+ }
+ .dbox{
+  width:100%;
+  height: 50px;;
+  background:#000; 
+}
+.appbarstyle{
+  width: 98%;
+  display: flex;
+  align-items: center;
+}
+.logostyle{
+  font-family: Kanit;font-size: 32px; font-weight: bold;
+  color:#fff; margin-left: 1%; 
+}
+.logoutstyle{
+  font-family: kanit; font-size: 16px; font-weight: bold;
+  color: #fff; margin-left: auto;
+
+}
+.sideBarLeft{
+  width:15%;
+  height:100%;
+  background:#fff; 
+}
+.admintextstyle{
+  font-family: Kanit;font-size: 16px;font-weight: bold;
+   display: flex; justify-content: center;
+
+}
+.contacttextstyle{
+  font-family: kanit; font-size: 12px; font-weight: bold;
+  display: flex; align-items: center; color: cornflowerblue;
+  flex-direction: column;
+
+}
+.menustyle{
+  font-family: kanit; font-size: 16px; font-weight: bold;
+  display: flex; margin-left: 40px; flex-direction: column;
+  margin-top: 20px;
+}
+.itemstyle{
+  margin-top: 20px;
+
+}
+.contentstyle{
+  margin: 20px;
+  width: 100%;
+}
+
+
+ 
+ 

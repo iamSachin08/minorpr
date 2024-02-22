@@ -1,0 +1,76 @@
+<html>
+   <head>
+
+      <link href="/stylesheets/style.css" rel="stylesheet" />
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Oswald:wght@200&display=swap" rel="stylesheet">
+      <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+      <script src="/javascripts/project.js"></script>
+  </head>
+  <body>
+  <form action="/products/edit_picture" method="post" enctype="multipart/form-data" >
+   <input type="hidden"   value="<%=data.productid%>" name="productid">
+  
+   <div class="maincontainer">
+      <div class="box">
+         <div class="container">
+
+            <div class="row">
+               <div class="col-12 centerstyle headstyle">
+                  <%=data.productname%>
+               </div>
+            </div>
+
+            <div class="row">
+               <div class="col-12">
+                   <hr>
+               </div>
+           </div>
+
+           <div class="row">
+            <div class="col-12 centerstyle">
+               <img src="/images/<%=data.picture%>" width="300">
+            </div>
+           </div>
+
+           <div class="row">
+            <div class="col-12">
+                <hr>
+            </div>
+        </div>
+
+           <div class="row" style="margin-top: 8px;">
+            <div class="col-6">
+                <label for="picture" class="form-label">Upload Product Image..</label>
+                <input  accept="image/*" class="form-control" type="file" id="picture" name="picture">
+            </div>
+
+            <div class="col-6" style="display:flex; align-items: center; justify-content: center;">
+                <img src="/images/image.png" id="productimage" width="60"/ style="border-radius: 10px;">
+            </div>
+        </div>
+
+
+            <div class="row" style="margin-top: 10px;">
+               <div class="col-12" style="display:flex; align-items: center; justify-content: center;">
+                   <button type="submit" class="btn btn-primary" style="width: 200px;">Submit</button>                          
+               </div>
+            </div>
+           </div>
+
+        </div>
+
+         </div>
+      </div>
+   </div>   
+  </form>
+  </body>
+
+
+
+
+</html>
+
+

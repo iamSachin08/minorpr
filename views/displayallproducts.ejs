@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <link href="/stylesheets/style.css" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Oswald:wght@200&display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+        <div class="maincontainer">
+            <div class="boxtable">
+                <div class="row">
+                    <div class="col-12 headstyle centerstyle">
+                     <img src="/images/logo.png" width="35"/>
+                      <span>Product Register</span>
+                     <a href="/products/productsinterface" style="margin-left: auto; font-style: italic; cursor: pointer;"><img src="/images/add.png" width="35"/></a> 
+                    </div>
+                    <div class="col-12"><hr></div>
+                 </div>
+        <% if(status) { %>
+        <table class="table table-striped fontstyle " >
+
+            <thead>
+                <th>S.no</th>
+                <th>category</th>
+                <th>Type</th>
+                <th>Product</th>
+                <th>Discription</th>
+                <th>Price</th>
+                <th>Stock</th>
+                <th>Gst</th>
+                <th>Warranty</th>
+                <th>Availability</th>
+                <th>Picture</th>
+                <th>Update</th>
+
+            </thead>
+            <tbody>
+               <% data.map((item,index)=>{ %>
+
+                <tr>
+                    <td><%=(index+1) %></td>
+                    <td><%=item.categoryid %>/<br><%=item.categoryname%></td>
+                    <td><%=item.typeid %>/<br><%=item.typename %></td>
+                    <td><%=item.brandid %>/<%=item.brandname %><br><%=item.productid %>/<%=item.productname %></td>
+                    <td><%=item.description %></td>
+                    <td><%=item.price %> / <%=item.offerprice %></td>
+                    <td><%=item.stock %></td>
+                    <td><%=item.gst %></td>
+                    <td><%=item.gift %></td>
+                    <td><%=item.status %></td>
+                    <td><a href="/products/show_picture?productid=<%=item.productid%>&productname=<%=item.productname%>&picture=<%=item.picture%>" style="text-decoration: none; cursor: pointer;"><img src="/images/<%=item.picture %>"  width="50" height="50" ></a></td>
+                    <td><a href="/products/display_product_by_id?productid=<%=item.productid%>"  style="text-decoration: none; cursor: pointer;">Edit/Delete</a></td>
+                </tr>
+
+                <% }) %>
+            
+            </tbody>
+        </table>
+
+            <% } else { %>
+                <h1><%=message %> </h1>
+                <%} %>
+
+
+            </div>
+            </div>         
+
+    </body>
+</html>
